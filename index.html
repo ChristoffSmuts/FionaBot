@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <TITLE>Fiona</TITLE>
+  <!-- Include necessary JavaScript files -->
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="Fionabot.js"></SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="Fionadata.js"></SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="FionabotEnter.js"></SCRIPT>
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+    // ... (your existing code for the chatbot)
+
+    // Add a variable to store the SpeechRecognition object
+    let recognition;
+    let recording = false; // Variable to track the recording state
+    // Get the button element by its ID
+    var recordbutton = document.getElementById("record");
+    recordbutton.style.backgroundColor = "489FB5";
+
+    // Function to start the speech recognition
+    function startSpeechRecognition() {
+      // Check if the SpeechRecognition API is supported
+      if ("webkitSpeechRecognition" in window) {
+        // Create a new SpeechRecognition object
+        recognition = new webkitSpeechRecognition();
+
+        // Set properties for the recognition
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = "en-US"; // You can change the language here if needed
+
+        // Start the recognition
+        recognition.start();
+        recording = true;
+        // Get the button element by its ID
+        var recordbutton = document.getElementById("record");
+        // Change the background color to red
+        recordbutton.style.backgroundColor = "red";
+        document.getElementById("fiona-activity").textContent = "Listening...";
+
+        // Event handler when speech is recognized
+        recognition.onresult = function (event) {
+          // Get the recognized text
+          const result = event.results[0][0].transcript;
+
+          // Set the recognized text to the input field
+          document.forms.e_form.e_input.value = result;
+
+          
+
+          // Automatically click the "Talk" button (the second button)
+          document.getElementById("talkButton").click();
+        };
+
+        // Event handler when recognition is ended
+        recognition.onend = function () {
+        recording = false;
+        var recordbutton = document.getElementById("record");
+        recordbutton.style.backgroundColor = "#489FB5";
+          
+        };
+      } else {
+        // SpeechRecognition API not supported
+        alert("Speech recognition is not supported in this browser.");
+      }
+          //Microphone on alert
+
+          
+            }
+            
+
+  </SCRIPT>
+</HEAD>
+
+<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0" onload="window.setTimeout('FionaReset()', 100)">
+  <A NAME="top"></A>
+
+  <CENTER>
+    <div class ="thewholething"
+    <div class="everything">
+      </Table>
+      <Table class="header">
+
+        <TD width="5px" height="50px"><img src="Emotions/Fiona_Neutral.png" class="profilepic" width="120pt" height="120pt"></TD>
+
+        <div class="fiona-heading">
+          <TD width="-69px" height="50px"><H1>Fiona</H1>
+            <p Id="fiona-activity">Online</p>
+          </TD>
+        </div>
+
+        <TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
+          <FORM NAME="e_form" onsubmit="FionaStep(); return false">
+            <TR>
+              <TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20" ID="ResponseTextArea" readonly onclick=focusinput() style="width: 609; height: 411px; resize: none; overflow-y: scroll; "></TEXTAREA></TD>
+            </TR>
+            <TR VALIGN="middle">
+              <TD><INPUT TYPE="text" NAME="e_input" SIZE="50" Id="inputField" autocomplete="off" placeholder = "Type your response here and click send or press enter."></TD>
+              <TD ALIGN="right">
+                <!-- First button: Hidden "Talk" button to be triggered by speech recognition -->
+                <input type="button" id="talkButton" value="&nbsp;Talk&nbsp;" class="button" style="display: none;" onclick="FionaStep()">
+                <!-- Second button: Actual "Talk" button that triggers speech recognition -->
+                <div class = button-panel>
+                <Table Cellpadding = "3pt">
+                <TD>
+                <INPUT TYPE="image" src="Icons/icons8-send-30.png" VALUE="&nbsp;Talk&nbsp;" class="button" onclick="FionaStep()"><span class="button-text"><br>Send</span>
+                </TD>
+                <TD>
+                <INPUT TYPE="image" src="Icons/icons8-reset-50.png" VALUE="Reset" onClick="window.setTimeout('FionaReset()', 100)" class="button"><span class="button-text"><br>Reset</span>
+                </TD>
+                <TD>
+                <INPUT TYPE="image" src="Icons/icons8-speak-50.png" VALUE="Speak" id = "record" class="button" onclick="startSpeechRecognition()"><span class="button-text"><br>Talk</span>
+                </TD>
+                <TD>
+                </Table>
+                </div>
+              </TD>
+            </TR>
+          </FORM>
+        </TABLE>
+      </div>
+
+      <br>
+      <h4><a target="_blank" href="https://icons8.com/icon/60700/sent">Send</a>, <a target="_blank" href="https://icons8.com/icon/8975/communicate">Speak</a> and
+      <a target="_blank" href="https://icons8.com/icon/12494/reset">Reset</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      </h4>
+    </div>
+  </CENTER>
+
+</BODY>
+</HTML>

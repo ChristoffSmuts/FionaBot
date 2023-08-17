@@ -1,0 +1,39 @@
+Okay
+
+Now we are going to add a to do list maker to fiona
+
+A to do list is saved to local storage in the browser
+lets call this todolistarr as a array
+
+When user ask Fiona the following
+
+To do list
+
+To do list please
+
+what do I have to do 
+
+or bring up my to do list
+
+fiona will respond with Fiona: And listing out the items in the array
+
+1 item
+2 item 
+3 item 
+
+When user say, add (something) to my to do list
+
+Fiona pushes the item to the to do list and reads out the to dolist again
+
+and then says the last item that has been added to the to do list
+
+like this has been added
+
+dont add add or remove words to the array these are commands 
+
+don't add to do list to the array either
+
+If you say remove or completed and it contains the item in the array in the same input that item is removed and Fiona Replies with the full to do list and state the item that has been removed as
+
+(item) has been removed.
+

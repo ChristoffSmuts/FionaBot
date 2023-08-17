@@ -1,0 +1,116 @@
+body{
+   background-color: #22B727;
+}
+
+.header{
+    background-color: #22B727;
+    min-width: 378pt;;
+    height: 84px;
+}
+
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#FFFFFF;
+    text-shadow:2px 2px 4px#140001;
+    
+
+}
+
+table{
+    border-radius: 10%;
+}
+.profilepic{
+    border-radius: 50%;
+    border-color: #489FB5;
+
+    font-size: 12pt;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+textarea{
+    border-radius: 5%;
+    padding:3%;
+    border-style: solid;
+    border-width: 3pt;
+    border-color: #489FB5;
+
+    font-size: 12pt;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button{
+    background-color: #489FB5;
+    border-radius: 5pt;
+    color: #DDBEA8;
+    border-color: #FFFFFF;
+    width: 22pt;
+    height: 22pt;
+    padding: 2pt;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.2);
+    ;
+}
+
+.everything{
+    min-width: 471pt;
+    max-width: 471pt;
+    background-color:#22B727;
+    margin-left: 323pt;
+    margin-right: 346pt;
+    padding: 1pt; 
+    border-radius: 5pt;
+    text-align: center;
+    border-width: 3pt;
+    border-color: #489FB5;
+    position: relative;
+    left: -42pt;
+
+    font-size: 12pt;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fiona {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .you {
+    font-weight: normal; /* or any other default format you want */
+    color: black; /* or any other default color you want */
+  }
+
+  p{
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow:2px 2px 4px#140001;
+  }
+
+  .fiona-heading{
+    position: relative;
+    left: 10pt;
+  }
+
+  #inputField{
+    width: 340pt;
+    border-width: 3pt;
+    border-color: #489FB5;
+
+    font-size: 12pt;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  a{
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0px 1px 3px white;
+  }
+
+  .button-panel{
+    color: white;
+    text-shadow:2px 2px 4px#140001;
+    text-align: center;
+  }
+
+  h4{
+    color: white;
+    text-shadow:2px 2px 4px#140001;
+  }
